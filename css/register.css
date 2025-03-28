@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+            min-height: 100vh;
+            background: url('../images/hotel-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            z-index: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            background: rgba(0, 43, 91, 0.85);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar a {
+            color: #FFD700;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0 25px;
+            padding: 10px 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 215, 0, 0.7);
+            color: #002B5B;
+            border-radius: 5px;
+        }
+
+        .register-box {
+            width: 400px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            text-align: center;
+            color: white;
+            margin: 100px auto;
+        }
+
+        .register-box h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .username, .email, .password, .confirm-password {
+            width: 100%;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            height: 40px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit {
+            width: 100%;
+            height: 40px;
+            background: #FFD700;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            color: #002B5B;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+
+        .submit:hover {
+            background: #FFA500;
+        }
+
+        .submit:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+
+        .goto_login {
+            font-weight: 600;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .login {
+            background: #FFD700;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            color: #002B5B;
+            font-size: 16px;
+            text-decoration: none;
+            width: 120px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .login:hover {
+            background: #FFA500;
+        }
+
+        .login a {
+            text-decoration: none;
+            color: #002B5B;
+            font-weight: bold;
+        }
+
+        #message {
+            font-size: 14px;
+            color: red;
+        }
+
+
+       
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 200px;
+                height: 100vh;
+                position: fixed;
+                left: -250px;
+                top: 0;
+                background: rgba(0, 43, 91, 0.95);
+                transition: left 0.3s ease-in-out;
+                padding-top: 20px;
+                z-index: 1001;
+            }
+        
+            .navbar.active {
+                left: 0;
+            }
+        
+            .navbar a {
+                display: block;
+                width: 80%;
+                padding: 15px;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        
+            .menu-toggle {
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                background: #FFD700;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 20px;
+                z-index: 1002;
+            }
+        }
+        
+    
