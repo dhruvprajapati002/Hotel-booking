@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +10,28 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
+   
     <header>
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="rooms.html">Rooms</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-        </nav>
-        <button class="menu-toggle">☰</button>
+    <?php
+session_start();
+?>
+
+<nav class="navbar">
+    <a href="index.php">Home</a>
+    <a href="rooms.html">Rooms</a>
+
+    <?php if (isset($_SESSION['user'])): ?>
+        <a href="#">Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?>!</a>
+        <a href="php/logout.php">Logout</a>
+    <?php else: ?>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    <?php endif; ?>
+</nav>
+
+    </nav>
+
+              <button class="menu-toggle">☰</button>
 <script>
     document.querySelector('.menu-toggle').addEventListener('click', function() {
         document.querySelector('.navbar').classList.toggle('active');
